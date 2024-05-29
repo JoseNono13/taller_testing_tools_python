@@ -1,7 +1,7 @@
 from hypothesis import given, strategies as st
 
-from app.calculator import Calculator
-from app.exceptions import OperationDoesntExist, MathematicalException
+from taller_testing_tools_python.app.calculator import Calculator
+from taller_testing_tools_python.app.exceptions import OperationDoesntExist, MathematicalException
 
 
 INVERSE_OPERATION = {
@@ -25,5 +25,3 @@ def test_calculate_is_working(op1: int, op2: int, operation: str):
 
     except (MathematicalException, OperationDoesntExist):
         return
-
-
