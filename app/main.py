@@ -12,8 +12,8 @@ from taller_testing_tools_python.app.exceptions import MathematicalException
 app = FastAPI()
 
 
-@app.post('/maths/calculate', response_model=int, response={400: {'description': 'Mathematical Error' }})
-def calculate(op: Operation) -> int:
+@app.post('/maths/calculate', response_model=float, responses={400: {'description': 'Mathematical error'}})
+def calculate(op: Operation) -> float:
     calculator = Calculator()
 
     result = calculator.calculate(op.op1, op.op2, operation=op.operation)
